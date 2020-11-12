@@ -46,16 +46,16 @@ python3 Main.py
 * After the script finish executing the result will be saved in a JSON file and can be displayed in html file either.
     * Example JSON Result for a car:
 ```json
-    {
-            "name": car_name,
-            "price": car_price,
-            "mileage": car_mileage,
-            "transmission": car_transmission,
-            "offer_type": car_offer_type,
-            "previous_owners": car_previous_owners,
-            "first_registration": car_first_registration,
-            "link": self.base_url + car_link
-    }
+{
+   "name": car_name,
+   "price": car_price,
+   "mileage": car_mileage,
+   "transmission": car_transmission,
+   "offer_type": car_offer_type,
+   "previous_owners": car_previous_owners,
+   "first_registration": car_first_registration,
+   "link": self.base_url + car_link
+}
 ```
 * #### Which is:
     * ##### Car name (Title)
