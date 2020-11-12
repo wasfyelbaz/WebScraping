@@ -1,4 +1,4 @@
-#**Cars Price Extractor**
+# **Cars Price Extractor**
 ![alt text](https://i.ibb.co/ZKbJ5L4/logo-removebg-preview.png "Cars Price Extractor")
 
 ## Note
