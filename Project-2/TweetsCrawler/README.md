@@ -27,8 +27,8 @@
     * change the {number_of_tweets} to match your needs
 ```json
     {
-        "target_username": "TestForScrapper", # Target User
-        "number_of_tweets": 10 # Number of tweets to be crawled
+        "target_username": "TestForScrapper",
+        "number_of_tweets": 10
     }
 ```
 * Then execute:
