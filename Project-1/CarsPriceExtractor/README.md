@@ -45,7 +45,7 @@ python3 Main.py
 ## Results
 * After the script finish executing the result will be saved in a JSON file and can be displayed in html file either.
     * Example JSON Result for a car:
-```json
+```
 {
    "name": car_name,
    "price": car_price,
