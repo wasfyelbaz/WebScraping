@@ -4,10 +4,13 @@ great company and there is no rule that disallows web crawlers or spiders on thi
 """
 import Extractor
 import Formator
+
 import requests
 from bs4 import BeautifulSoup
+
 import json
 from time import sleep
+import concurrent.futures
 
 CARS_MANUFACTURER_JSON = "manufacturer.json"
 CARS_LIST = []
@@ -50,7 +53,7 @@ if YEAR == "":
     print("  + All years are allowed")
 
 SAVE_MODE = int(input("* Save as:\n\n  (1) JSON File Only\n  (2) HTML File and JSON\n>> "))
-
+print("")
 
 def extract_cars_from_url(url):
 
@@ -65,19 +68,19 @@ def extract_cars_from_url(url):
     return ex.cars_list
 
 
-PATH = ""
-
-for i in range(1, 21):
+def run(PAGE):
 
     PATH = f"/lst/{MANUFACTURER}/{MODEL}?sort=standard&desc=0&ustate=N%2CU&size=20&page={PAGE}&priceto={PRICE_TO}&fregfrom={YEAR}&atype=C&"
     FULL_URL = BASE_URL + PATH
     print(f"* Getting data from page {PAGE}")
-    print(FULL_URL)
 
     for car in extract_cars_from_url(FULL_URL):
         CARS_LIST.append(car)
 
-    PAGE += 1
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+
+    executor.map(run, [i for i in range(1, 21)])
 
 if SAVE_MODE == 1:
     fr.create_json_file(CARS_LIST)
